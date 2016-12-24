@@ -220,6 +220,7 @@ HEADERS += src/qt/bitcoingui.h \
     src/limitedmap.h \
     src/qt/macnotificationhandler.h \
     src/qt/splashscreen.h \
+    src/qt/blockexplorer.h \
     src/hashblock.h \
     src/sph_luffa.h \
     src/sph_cubehash.h \
@@ -240,6 +241,7 @@ SOURCES += src/qt/bitcoin.cpp \
     src/qt/signverifymessagedialog.cpp \
     src/qt/aboutdialog.cpp \
     src/qt/editaddressdialog.cpp \
+    src/qt/blockexplorer.cpp \
     src/qt/bitcoinaddressvalidator.cpp \
     src/alert.cpp \
     src/version.cpp \
@@ -318,6 +320,7 @@ FORMS += src/qt/forms/sendcoinsdialog.ui \
     src/qt/forms/sendcoinsentry.ui \
     src/qt/forms/askpassphrasedialog.ui \
     src/qt/forms/rpcconsole.ui \
+    src/qt/forms/blockexplorer.ui \
     src/qt/forms/optionsdialog.ui
 
 contains(USE_QRCODE, 1) {
