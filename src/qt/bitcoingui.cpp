@@ -75,7 +75,6 @@ BitcoinGUI::BitcoinGUI(QWidget *parent) :
     trayIcon(0),
     notificator(0),
     rpcConsole(0),
-    blockBrowser(0),
     prevBlocks(0)
 {
     restoreWindowGeometry();
@@ -157,9 +156,6 @@ BitcoinGUI::BitcoinGUI(QWidget *parent) :
     connect(openRPCConsoleAction, SIGNAL(triggered()), rpcConsole, SLOT(show()));
     // prevents an oben debug window from becoming stuck/unusable on client shutdown
     connect(quitAction, SIGNAL(triggered()), rpcConsole, SLOT(hide()));
-
-    blockBrowser = new BlockBrowser(this);
-    connect(openBlockBrowserAction, SIGNAL(triggered()), blockBrowser, SLOT(show()));
 
     // Install event filter to be able to catch status tip events (QEvent::StatusTip)
     this->installEventFilter(this);
@@ -267,9 +263,6 @@ void BitcoinGUI::createActions()
     openRPCConsoleAction = new QAction(QIcon(":/icons/debugwindow"), tr("&Debug window"), this);
     openRPCConsoleAction->setStatusTip(tr("Open debugging and diagnostic console"));
 
-    openBlockBrowserAction = new QAction(QIcon(":/icons/explorer"), tr("Blockchain Explorer"), this);
-    openBlockBrowserAction->setStatusTip(tr("Open blockchain explorer"));
-
     connect(quitAction, SIGNAL(triggered()), qApp, SLOT(quit()));
     connect(aboutAction, SIGNAL(triggered()), this, SLOT(aboutClicked()));
     connect(aboutQtAction, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
@@ -315,7 +308,6 @@ void BitcoinGUI::createMenuBar()
     QMenu *help = appMenuBar->addMenu(tr("&Help"));
     help->addAction(openRPCConsoleAction);
     help->addSeparator();
-    help->addAction(openBlockBrowserAction);
     help->addSeparator();
     help->addAction(aboutAction);
     help->addAction(aboutQtAction);
@@ -452,7 +444,6 @@ void BitcoinGUI::createTrayIconMenu()
     trayIconMenu->addSeparator();
     trayIconMenu->addAction(optionsAction);
     trayIconMenu->addAction(openRPCConsoleAction);
-    trayIconMenu->addAction(openBlockBrowserAction);
 #ifndef Q_OS_MAC // This is built-in on Mac
     trayIconMenu->addSeparator();
     trayIconMenu->addAction(quitAction);
