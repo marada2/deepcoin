@@ -26,3 +26,28 @@ License
 
 Deepcoin is released under the terms of the MIT license. See `COPYING` for more
 information or see http://opensource.org/licenses/MIT.
+
+Warning
+----------------
+This is an experimental repository and it is not intended for normal usage.
+Please use with special care.
+If you were looking for official Deepcoin client, please visit:
+https://github.com/Deepcoinbiz/Deepcoin
+
+How to build experimental version with stealth address feature enabled
+----------------
+Please make sure you have installed following packages:
+qt4-qmake libqt4-dev libdb5.1++-dev g++ libleveldb-dev libssl-dev libboost-all-dev
+
+$ git clone https://github.com/marada2/deepcoin/
+$ cd deepcoin
+$ git checkout new-sx-0.8.7
+$ qmake-qt4
+$ make
+
+Precompiled binaries
+----------------
+To get the precompiled binaries please visit:
+https://github.com/marada2/deepcoin-binaries
+
+Or download from http://dcn.deeptech.pw/
