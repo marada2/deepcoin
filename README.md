@@ -39,11 +39,11 @@ How to build experimental version with stealth address feature enabled
 Please make sure you have installed following packages:
 qt4-qmake libqt4-dev libdb5.1++-dev g++ libleveldb-dev libssl-dev libboost-all-dev
 
-git clone https://github.com/marada2/deepcoin/
-cd deepcoin
-git checkout new-sx-0.8.7
-qmake-qt4
-make
+git clone https://github.com/marada2/deepcoin/<br>
+cd deepcoin<br>
+git checkout new-sx-0.8.7<br>
+qmake-qt4<br>
+make<br>
 
 Precompiled binaries
 ----------------
